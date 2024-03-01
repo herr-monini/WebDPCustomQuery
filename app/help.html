@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IQ Help</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left; /* Left-align the text within the container */
+        }
+    
+        /* Add more styles as needed */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <h1>Imperative Query Web Help Page</h1>
+    <p>Imperative Query Web is a web interface to the Imperative Query language, which 
+        is a simple imperative query language that transpiles to json on a form that adheres 
+        to the <a href="https://github.com/dpella/WebDP">WebDP</a> /evaluate endpoint spec.
+        To learn more about the syntax, you can visit the IQ <a href="https://github.com/herr-monini/ImperativeQuery/blob/main/README.md">github</a>
+        and read the README file. 
+    </p>
+    <h3>Compilation</h3>
+    <p>
+        To compile your IQ query, you send it to the "/compile" endpoint. Instead of saving json files, the server will send back 
+        a list of json objects:
+        <pre>
+            [
+                {
+                    "name" : "your query name",
+                    "query" : {
+                        "budget" : "<*QUERY BUDGET*>",
+                        "dataset" : "<*DATASET ID*>",
+                        "query" : [ "... YOUR QUERY STEPS" ]
+
+                    }
+                }
+            ]
+        </pre>
+        where the value of the outer <pre>"query"</pre> is your WebDP evaluate request.
+    
+        <h3>Editor</h3>
+        <p>
+            A simple editor is available from the endpoint /editor
+        </p>
+        <h3>Summary</h3>
+        <p>
+            The server runs on port 3000. The endpoints that are supported are:
+            <ol>
+                <li>/compiler (POST)</li>
+                <li>/editor (GET)</li>
+                <li>/help (GET)</li>
+            </ol>
+
+        </p>
+    </div>
+    
+
+</body>

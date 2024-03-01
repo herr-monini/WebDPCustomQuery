@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compile Form</title>
+</head>
+<body>
+    <h1>Compile Form</h1>
+    <form id="compileForm">
+        <label for="code">Enter your code:</label><br>
+        <textarea id="code" name="code" rows="20" cols="70"></textarea><br>
+        <input type="button" value="Compile" onclick="submitForm()">
+    </form>
+   
+    
+
+    <div id="display">
+        <pre id="out"></pre>
+    </div>
+    
+
+    <script>
+        function submitForm() {
+            var code = document.getElementById("code").value;
+            
+            fetch('/compile', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain'
+                },
+                body: code
+            })
+            .then(response => response.json())
+            .then(data => {
+
+                var cont = document.getElementById("out");
+                cont.innerHTML = JSON.stringify(data, undefined, 2);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>

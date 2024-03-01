@@ -9,9 +9,9 @@ version:        0.1.0.0
 description:    Please see the README on GitHub at <https://github.com/githubuser/webdp-rest#readme>
 homepage:       https://github.com/githubuser/webdp-rest#readme
 bug-reports:    https://github.com/githubuser/webdp-rest/issues
-author:         Author name here
+author:         Simon Porsgaard
 maintainer:     example@example.com
-copyright:      2024 Author name here
+copyright:      2024 Simon Porsgaard
 license:        BSD-3-Clause
 license-file:   LICENSE
 build-type:     Simple
@@ -25,7 +25,6 @@ source-repository head
 
 library
   exposed-modules:
-      AesonWebDP
       Compiler
       Hjayson
       Lib

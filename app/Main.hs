@@ -14,7 +14,6 @@ import WebDPConv.Abs
 import Network.HTTP.Types.Status
 import Data.Aeson (Value (Array), (.=), object, toJSON)
 import Debug.Trace
-import AesonWebDP
 import Hjayson
 
 type Err = Either String
@@ -32,11 +31,11 @@ main = scotty 3000 $ do
 
 editor :: ScottyM() 
 editor = get "/editor" $ do
-        file "/home/monini/code/haskell/webdprest/webdp-rest/app/editor.html"
+        file "/project/app/editor.html"
 
 help :: ScottyM()
 help = get "/help" $ do 
-    file "/home/monini/code/haskell/webdprest/webdp-rest/app/help.html"
+    file "/project/app/help.html"
 
 compileQuery :: ScottyM ()
 compileQuery = post "/compile" $ do

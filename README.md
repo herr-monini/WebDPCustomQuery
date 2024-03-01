@@ -10,7 +10,9 @@ There are 3 endpoints:
 
 `GET /help` 
   - Response html
+    
 `GET /editor`
    - Response: html
+     
 `POST /compile`
   - Response: json
